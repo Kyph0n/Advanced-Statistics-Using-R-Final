@@ -1,4 +1,4 @@
-# Advanced-Statistics-Using-R-Final
+# Advanced-Statistics-Using-R-Final #############################################################
 Code for my final project for Advanced Statistics Using R
 
 # load data into RStudio (Cleaned for privacy)
