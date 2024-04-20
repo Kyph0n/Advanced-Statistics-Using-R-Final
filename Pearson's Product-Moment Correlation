@@ -1,0 +1,63 @@
+sample estimates:
+      cor 
+0.9971962 
+	Pearson's product-moment correlation
+
+data:  dataCleanPublic$HepA and dataCleanPublic$All
+t = 27.858, df = 490, p-value < 2.2e-16
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.7461710 0.8149271
+sample estimates:
+      cor 
+0.7829284
+	Pearson's product-moment correlation
+
+data:  dataCleanNonPublic$HepA and dataCleanNonPublic$All
+t = 7.6697, df = 16, p-value = 9.54e-07
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.7163126 0.9572657
+sample estimates:
+      cor 
+0.8866611
+	Pearson's product-moment correlation
+
+data:  dataCleanPublic$Ex_Rel and dataCleanPublic$Ex_Tot
+t = 22.883, df = 490, p-value < 2.2e-16
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.6731144 0.7589276
+sample estimates:
+      cor 
+0.7187472 
+	Pearson's product-moment correlation
+
+data:  dataCleanPublic$Ex_Rel and dataCleanPublic$Ex_Tot
+t = 22.883, df = 490, p-value < 2.2e-16
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.6731144 0.7589276
+sample estimates:
+      cor 
+0.7187472
+	Pearson's product-moment correlation
+
+data:  dataCleanPublic$Ex_Med and dataCleanPublic$Ex_Tot
+t = 22.688, df = 490, p-value < 2.2e-16
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.6697454 0.7563142
+sample estimates:
+      cor 
+0.7157686
+	Pearson's product-moment correlation
+
+data:  dataCleanNonPublic$Ex_Med and dataCleanNonPublic$Ex_Tot
+t = 1.1204, df = 16, p-value = 0.2791
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.2255469  0.6542127
+sample estimates:
+      cor 
+0.2697256
