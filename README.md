@@ -1,2 +1,61 @@
 # Advanced-Statistics-Using-R-Final
 Code for my final project for Advanced Statistics Using R
+
+# load data into RStudio (Cleaned for privacy)
+data <- read.csv("2022-2023_Kindergarten_Immunization_Rates_by_School.csv")
+# clean data, omiting schools that didn't provide vaccination data
+dataClean <- na.omit(data)
+# Graph every vaccine and school type
+library(ggplot2)
+histograms <- lapply(names(dataClean)[grep("Polio|DTaP|MMR|HepB|Varicella|HepA|Ex_Tot", names(dataClean))], function(var) {
+  +     ggplot(dataClean, aes_string(x = var)) +
+    +         geom_histogram(fill = "blue", color = "black", bins = 10) +
+    +         facet_wrap(~School.Type, scales = "free") +
+    +         labs(title = paste("Histogram of", var, "by School Type"),
+                   +              x = var, y = "Frequency")
+  + })
+print(histograms)
+# Make Subtables to house each School Type
+dataCleanPublic <- subset(dataClean, School.Type == "Public")
+dataCleanNonPublic <- subset(dataClean, School.Type == "Non-Public")
+# Create the Corelation test
+## Polio
+CorTestPolioPublic <- cor.test(dataCleanPublic$Polio, dataCleanPublic$All)
+print(CorTestPolioPublic)
+CorTestPolioNonPublic <- cor.test(dataCleanNonPublic$Polio, dataCleanNonPublic$All)
+print(CorTestPolioNonPublic)
+## DTaP
+CorTestDTaPPublic <- cor.test(dataCleanPublic$DTaP, dataCleanPublic$All)
+print(CorTestDTaPPublic)
+CorTestDTaPNonPublic <- cor.test(dataCleanNonPublic$DTaP, dataCleanNonPublic$All)
+print(CorTestDTaPNonPublic)
+## MMR
+CorTestMMRPublic <- cor.test(dataCleanPublic$MMR, dataCleanPublic$All)
+print(CorTestMMRPublic)
+CorTestMMRNonPublic <- cor.test(dataCleanNonPublic$MMR, dataCleanNonPublic$All)
+print(CorTestMMRNonPublic)
+## HepB
+CorTestMMRNonPublic <- cor.test(dataCleanNonPublic$MMR, dataCleanNonPublic$All)
+print(CorTestHepBPublic)
+CorTestHepBNonPublic <- cor.test(dataCleanNonPublic$HepB, dataCleanNonPublic$All)
+print(CorTestHepBNonPublic)
+## Varicella
+CorTestVaricellaPublic <- cor.test(dataCleanPublic$Varicella, dataCleanPublic$All)
+print(CorTestVaricellaPublic)
+CorTestVaricellaNonPublic <- cor.test(dataCleanNonPublic$Varicella, dataCleanNonPublic$All)
+print(CorTestVaricellaNonPublic)
+## HepA
+CorTestHepAPublic <- cor.test(dataCleanPublic$HepA, dataCleanPublic$All)
+print(CorTestHepAPublic)
+CorTestHepANonPublic <- cor.test(dataCleanNonPublic$HepA, dataCleanNonPublic$All)
+print(CorTestHepANonPublic)
+## Exempt Religious
+CorTestExptRelPublic <- cor.test(dataCleanPublic$Ex_Rel, dataCleanPublic$Ex_Tot)
+print(CorTestExptRelPublic)
+CorTestExptRelNonPublic <- cor.test(dataCleanNonPublic$Ex_Rel, dataCleanNonPublic$Ex_Tot)
+print(CorTestExptRelPublic)
+## Exempt Medical
+CorTestExptMedPublic <- cor.test(dataCleanPublic$Ex_Med, dataCleanPublic$Ex_Tot)
+print(CorTestExptMedPublic)
+CorTestExptMedNonPublic <- cor.test(dataCleanNonPublic$Ex_Med, dataCleanNonPublic$Ex_Tot)
+print(CorTestExptMedNonPublic)
